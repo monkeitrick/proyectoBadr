@@ -1,7 +1,0 @@
-MOSTRARAYUDA: Muestra las diferentes opciones de ayuda.
-INTRODUCIRPALABRA: Para introducir una nueva palabra.
-MISFICHAS: Para ver las fichas.
-MIPUNTUACION: Para ver mi puntuación.
-PUNTOSDEFICHAS: Para ver la puntuación de las fichas.
-PALABRADEAYUDA: Para obtener posibles palabras.
-SALIRJUEGO: Para salir del juego y volver al menú principal.

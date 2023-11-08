@@ -1,0 +1,9 @@
+
+1) IDENTIFICARUSUARIO: Introduce tu nombre de usuario por el que seras conocido en el juego
+2) JUGAR: Comenzar el juego una vez identificado el usuario
+3) MOSTRARPUNTUACIONES: Muestra los datos de todas las puntuaciones obtenidas por todos los usuarios en un Dataframe
+4) MOSTRARJUGADAS: Muestra los datos de todas las jugadas realizazdas por todos los usuarios en un Dataframe
+5) MOSTRARGRAFICO1: Muestra el grupo de tres graficos, grafico de puntos, 
+6) MOSTRARGRAFICO2: Muestra el Histograma con las puntuaciones del usuario
+7)MOSTRARGRAFICO3: Muestra el grafico de tarta con la información con las 5 palabras y su Nº de veces con las que más se ha ganado el juego. 
+8) SALIR: Para salir del menu.
