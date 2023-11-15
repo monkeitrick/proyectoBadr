@@ -1,1 +1,9 @@
-Usuario,NÂº de partida,Puntos totales de partida,NÂº Total Palabras,Max puntos Palabra, Palabra ganadora
+Usuario;Nº de partida;Puntos totales;Nº total palabras;Max puntos palabra;Partida Ganada(S/N);Palabra ganadora
+Antonio;1;63;9;12;S;goles
+Antonio;2;30;4;9;N;0
+Antonio;3;63;9;12;S;enoje
+Antonio;4;27;4;12;S;debo
+Luis;5;56;8;12;S;veo
+Luis;6;8;2;6;N;0
+Maria;7;34;5;12;S;su
+Antonio;8;24;3;9;N;0

@@ -1,37 +1,46 @@
-import os
-directorio_actual = os.getcwd()
-ruta_archivo_menuTXT = os.path.join(directorio_actual,"proyectoBadr", "Recursos", "menu_juego.txt")
-ruta_archivo_juegoTXT= os.path.join(directorio_actual,"proyectoBadr", "Recursos", "mensajes_opciones_juego.txt")
-with open(ruta_archivo_menuTXT, "r") as archivo:
-    menuPrincipal= archivo.read()
-with open(ruta_archivo_juegoTXT, "r") as archivo:
-    menuJuego= archivo.read()
+import Libreriafunciones
+import numpy as np
+
+menuPrincipal=Libreriafunciones.menuPrincipal()
+menuJuego=Libreriafunciones.menuJuego()
+mensajeBienvenida=Libreriafunciones.ayudaBienvenida()
 
 
+bolsaDeFichas=Libreriafunciones.crearBolsa()
+atrilJugador=[]     
+score=0
+usuario=""
+
+print(mensajeBienvenida)
 seleccionPrincipal=input(menuPrincipal)
 try:
     valorMenuPrincipal = int(seleccionPrincipal)
     while(seleccionPrincipal!="8"):
         if seleccionPrincipal=="1":
-            print()
+            while usuario=="":
+                usuario=input("Introduce tu usuario/Nombre: ")
+            print("Bienvenido al juego {}".format(usuario))
         elif seleccionPrincipal=="2":
-            seleccionJuego=input(menuJuego)
-            while(seleccionJuego!="7"):
-                if seleccionJuego=="1":
-                    print()
-                elif seleccionJuego=="2":
-                    print()
-                elif seleccionJuego=="3":
-                    print()
-                elif seleccionJuego=="4":
-                    print()
-                elif seleccionJuego=="5":
-                    print()
-                elif seleccionJuego=="6":
-                    print()
-                else:
-                    print("Tienes que introducir un valor entre 1 y 7")
-                seleccionPrincipal=input(menuPrincipal)
+            if usuario!="":
+                seleccionJuego=input(menuJuego)
+                while(seleccionJuego!="7"):
+                    if seleccionJuego=="1":
+                        print()
+                    elif seleccionJuego=="2":
+                        print()
+                    elif seleccionJuego=="3":
+                        print()
+                    elif seleccionJuego=="4":
+                        print()
+                    elif seleccionJuego=="5":
+                        print()
+                    elif seleccionJuego=="6":
+                        print()
+                    else:
+                        print("Tienes que introducir un valor entre 1 y 7")
+                    seleccionPrincipal=input(menuPrincipal)
+            else:
+                print("Primero identificate")
         elif seleccionPrincipal=="3":
             print()
         elif seleccionPrincipal=="4":

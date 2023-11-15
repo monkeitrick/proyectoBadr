@@ -5,4 +5,4 @@
 4) MIPUNTUACION: Para ver mi puntuación.
 5) PUNTOSDEFICHAS: Para ver la puntuación de las fichas.
 6) PALABRADEAYUDA: Para obtener posibles palabras.
-7) SALIRJUEGO: Para salir del juego y volver al menú principal
+7) SALIRJUEGO: Para salir del juego y volver al menu principal
