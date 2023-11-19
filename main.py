@@ -1,13 +1,15 @@
 import Libreriafunciones
 import numpy as np
-
+import pandas as pd
 menuPrincipal=Libreriafunciones.menuPrincipal()
 menuJuego=Libreriafunciones.menuJuego()
 mensajeBienvenida=Libreriafunciones.ayudaBienvenida()
 
-
-bolsaDeFichas=Libreriafunciones.crearBolsa()
-atrilJugador=[]     
+tablero = pd.DataFrame(index=range(15), columns=range(15),data=' ')
+bolsaDeFichas={}
+Libreriafunciones.crearBolsa(bolsaDeFichas)
+atrilJugador=[] 
+Libreriafunciones.cargarAtril(atrilJugador,bolsaDeFichas)
 score=0
 usuario=""
 
@@ -22,6 +24,8 @@ try:
             print("Bienvenido al juego {}".format(usuario))
         elif seleccionPrincipal=="2":
             if usuario!="":
+                Libreriafunciones.mostrarTablero(tablero)
+                Libreriafunciones.mostrarTablero(atrilJugador)
                 seleccionJuego=input(menuJuego)
                 while(seleccionJuego!="7"):
                     if seleccionJuego=="1":
@@ -43,7 +47,11 @@ try:
                 print("Primero identificate")
         elif seleccionPrincipal=="3":
             print()
+            print(Libreriafunciones.csvADataframePuntuaciones())
+            print()
         elif seleccionPrincipal=="4":
+            print()
+            print(Libreriafunciones.csvADataframeJugadas())
             print()
         elif seleccionPrincipal=="5":
             print()
