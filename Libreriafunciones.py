@@ -43,25 +43,37 @@ def colocarPalabra(atril,palabra,cordenada,direccion,tableroExterno,libreriaPala
         if (tablero != ' ').any().any()==False:
             col=7
             row=7
-            for letra in palabra:
-                atrilInterno.remove(letra)
-                tablero.iloc[row-1,col-1]=letra
-                puntos=puntos+getPuntos(letra,coleccionPuntos)
-                print(puntos)
-                if direccion.lower()=='v':
-                    col+=+1
+            contador=0
+            letrasBorrar=[]
+            for letra in palabra.upper():
+                if letra in atrilInterno:
+                    letrasBorrar.append(letra)
                 else:
-                    row+=1
-            atril=atrilInterno
-            libreriaPalabras.append(palabra)
-            return puntos
+                    loContiene=False
+                contador+=1
+            if loContiene==True:
+                for letra in palabra:
+                    atrilInterno.remove(letra.upper())
+                    tablero.iloc[row-1,col-1]=letra.upper()
+                    puntos=puntos+getPuntos(letra,coleccionPuntos)
+                    print(puntos)
+                    if direccion.lower()=='v':
+                        col+=+1
+                    else:
+                        row+=1
+                atril=atrilInterno
+                libreriaPalabras.append(palabra)
+                return puntos
+            else:
+                print("No hay suficientes letras para introducir la palabra")
+                return 0
         else:
             if direccion.lower()=='v':
                 if tablero.iloc[int(row)-1,int(col)-2]==' ' and tablero.iloc[int(row)-1,int(col)+len(palabra)+1-1]==' ':
                     contador=0
                     letrasBorrar=[]
                     letraEnTablero=False
-                    for letra in palabra:
+                    for letra in palabra.upper():
                         if letra == tablero.iloc[int(row)-1,int(col)+contador-1]:
                             letraEnTablero=True
                         elif letra in atrilInterno:
@@ -72,11 +84,11 @@ def colocarPalabra(atril,palabra,cordenada,direccion,tableroExterno,libreriaPala
                     if loContiene==True:
                         if letraEnTablero==True:
                             for letra in letrasBorrar:
-                                atrilInterno.remove(letra)
+                                atrilInterno.remove(letra.upper())
                             atril=atrilInterno
                             row,col=cordenada.split(',')
                             for letra in palabra:
-                                tablero.iloc[int(row)-1,int(col)-1]=letra
+                                tablero.iloc[int(row)-1,int(col)-1]=letra.upper()
                                 puntos+=getPuntos(letra,coleccionPuntos)
                                 col=int(col)+1
                             libreriaPalabras.append(palabra)
@@ -95,7 +107,7 @@ def colocarPalabra(atril,palabra,cordenada,direccion,tableroExterno,libreriaPala
                     contador=0
                     letrasBorrar=[]
                     letraEnTablero=False
-                    for letra in palabra:
+                    for letra in palabra.upper():
                         if letra == tablero.iloc[int(row)+contador-1,int(col)-1]:
                             letraEnTablero=True
                         elif letra in atrilInterno:
@@ -106,11 +118,11 @@ def colocarPalabra(atril,palabra,cordenada,direccion,tableroExterno,libreriaPala
                     if loContiene==True:
                         if letraEnTablero==True:
                             for letra in letrasBorrar:
-                                atrilInterno.remove(letra)
+                                atrilInterno.remove(letra.upper())
                             atril=atrilInterno
                             row,col=cordenada.split(',')
                             for letra in palabra:
-                                tablero.iloc[int(row)-1,int(col)-1]=letra
+                                tablero.iloc[int(row)-1,int(col)-1]=letra.upper()
                                 row=int(row)+1
                                 puntos+=getPuntos(letra,coleccionPuntos)
                             libreriaPalabras.append(palabra)

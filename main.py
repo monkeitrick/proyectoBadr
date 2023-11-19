@@ -12,58 +12,67 @@ atrilJugador=[]
 Libreriafunciones.cargarAtril(atrilJugador,bolsaDeFichas)
 score=0
 usuario=""
+libreriaPalabras=[]
+puntuaciones={}
+Libreriafunciones.obtenerPuntuaciones(puntuaciones)
 
 print(mensajeBienvenida)
 seleccionPrincipal=input(menuPrincipal)
-try:
-    valorMenuPrincipal = int(seleccionPrincipal)
-    while(seleccionPrincipal!="8"):
-        if seleccionPrincipal=="1":
-            while usuario=="":
-                usuario=input("Introduce tu usuario/Nombre: ")
-            print("Bienvenido al juego {}".format(usuario))
-        elif seleccionPrincipal=="2":
-            if usuario!="":
-                Libreriafunciones.mostrarTablero(tablero)
-                Libreriafunciones.mostrarTablero(atrilJugador)
+# try:
+valorMenuPrincipal = int(seleccionPrincipal)
+while(seleccionPrincipal!="8"):
+    if seleccionPrincipal=="1":
+        while usuario=="":
+            usuario=input("Introduce tu usuario/Nombre: ")
+        print("Bienvenido al juego {}".format(usuario))
+    elif seleccionPrincipal=="2":
+        if usuario!="":
+            Libreriafunciones.mostrarTablero(tablero)
+            Libreriafunciones.mostrarTablero(atrilJugador)
+            seleccionJuego=input(menuJuego)
+            while(seleccionJuego!="7"):
+                if seleccionJuego=="1":
+                    print()
+                elif seleccionJuego=="2":
+                    palabra=input("introduce la palabra")
+                    cordenada=input("introduce las cordenadas(Numero,Numero)")
+                    direccion=input("introduce la direccion")
+                    score+=Libreriafunciones.colocarPalabra(atrilJugador,palabra,cordenada,direccion,tablero,libreriaPalabras)
+                    Libreriafunciones.cargarAtril(atrilJugador,bolsaDeFichas)
+                    Libreriafunciones.mostrarTablero(tablero)
+                    Libreriafunciones.mostrarTablero(atrilJugador)
+                elif seleccionJuego=="3":
+                    Libreriafunciones.mostrarTablero(atrilJugador)
+                elif seleccionJuego=="4":
+                    print("Tu Puntuacuion es: ",score)
+                elif seleccionJuego=="5":
+                    Libreriafunciones.mostrarPuntuaciones(puntuaciones)
+                elif seleccionJuego=="6":
+                    print()
+                else:
+                    print("Tienes que introducir un valor entre 1 y 7")
                 seleccionJuego=input(menuJuego)
-                while(seleccionJuego!="7"):
-                    if seleccionJuego=="1":
-                        print()
-                    elif seleccionJuego=="2":
-                        print()
-                    elif seleccionJuego=="3":
-                        print()
-                    elif seleccionJuego=="4":
-                        print()
-                    elif seleccionJuego=="5":
-                        print()
-                    elif seleccionJuego=="6":
-                        print()
-                    else:
-                        print("Tienes que introducir un valor entre 1 y 7")
-                    seleccionPrincipal=input(menuPrincipal)
-            else:
-                print("Primero identificate")
-        elif seleccionPrincipal=="3":
-            print()
-            print(Libreriafunciones.csvADataframePuntuaciones())
-            print()
-        elif seleccionPrincipal=="4":
-            print()
-            print(Libreriafunciones.csvADataframeJugadas())
-            print()
-        elif seleccionPrincipal=="5":
-            print()
-        elif seleccionPrincipal=="6":
-            print()
-        elif seleccionPrincipal=="7":
-            print()
         else:
-            print("Tienes que introducir un valor entre 1 y 8")
-        seleccionPrincipal=input(menuPrincipal)
-except ValueError:
-    print("Tienes que introducir un valor numerico")
+            print("Primero identificate")
+    elif seleccionPrincipal=="3":
+        print()
+        print(Libreriafunciones.csvADataframePuntuaciones())
+        print()
+    elif seleccionPrincipal=="4":
+        print()
+        print(Libreriafunciones.csvADataframeJugadas())
+        print()
+    elif seleccionPrincipal=="5":
+        print()
+    elif seleccionPrincipal=="6":
+        print()
+    elif seleccionPrincipal=="7":
+        print()
+    else:
+        print("Tienes que introducir un valor entre 1 y 8")
+    seleccionPrincipal=input(menuPrincipal)
+# except ValueError:
+#     print("Tienes que introducir un valor numerico")
     
     
     
