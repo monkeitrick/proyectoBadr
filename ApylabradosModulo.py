@@ -36,4 +36,4 @@ import Libreriafunciones
 # Libreriafunciones.obtenerPuntuaciones(puntos)
 # Libreriafunciones.mostrarPuntuaciones(puntos)
 # print(Libreriafunciones.getPuntos("c",puntos))
-print(Libreriafunciones.csvADataframeJugadas())
+#print(Libreriafunciones.csvADataframeJugadas())

@@ -5,4 +5,6 @@
 4) MIPUNTUACION: Para ver mi puntuación.
 5) PUNTOSDEFICHAS: Para ver la puntuación de las fichas.
 6) PALABRADEAYUDA: Para obtener posibles palabras.
-7) SALIRJUEGO: Para salir del juego y volver al menu principal
+7) TERMINARJUEGO: Para terminar el juego(Final Del Juego)
+8) QUITARFICHAS: Selecciona las fichas que quieres quitar del atril(Solo se puede 3 veces seguidas)
+9) SALIRJUEGO: Para salir del juego y volver al menu principal(Se puede reanudar mas adelante)
